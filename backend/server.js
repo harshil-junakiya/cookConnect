@@ -3,6 +3,7 @@ import dotenv from 'dotenv'
 import cors from 'cors'
 import connectDB from './config/mongodb.js'
 import authRoute from './routes/authRoute.js'
+import recipeRoute from "./routes/recipeRoute.js";
 
 dotenv.config()
 
@@ -21,6 +22,7 @@ app.get('/', (req, res)=> {
 
 
 app.use("/api/auth", authRoute)
+app.use("/api/recipes", recipeRoute)
 
 
 
